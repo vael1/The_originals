@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vampire world</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Baloo Bhai 2", cursive;
+      color: white;
+      margin: 0px;
+      padding: 0px;
+      background: url("fix.jpg");
+    }
+    .left {
+      display: inline-block;
+      /* border: 2px solid red; */
+      position: absolute;
+      left: 43px;
+      top: 10px;
+    }
+    .left img {
+      width: 50px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .left div {
+      text-align: center;
+      line-height: 40px;
+      font-size: 18px;
+    }
+
+    .mid {
+      display: block;
+      width: 41%;
+      margin: 10px auto;
+      /* border: 2px solid green; */
+    }
+    .right {
+      position: absolute;
+      right: 34px;
+      top: 13px;
+      display: inline-block;
+      /* border: 2px solid yellow; */
+    }
+    .navbar {
+      display: inline-block;
+    }
+
+    .navbar li {
+      display: inline-block;
+      font-size: 21px;
+    }
+    .navbar li a {
+      color: #060000;
+      text-decoration: none;
+      padding: 34px 26px;
+    }
+    .navbar li a:hover,
+    .navbar li a.active {
+      text-decoration: underline;
+      color: rgb(252, 0, 0);
+    }
+    .btn {
+      font-family: "Baloo Bhai 2", cursive;
+      margin: 0px 9px;
+      color: white;
+      background-color: black;
+      padding: 4px 9px;
+      border: 2px solid grey;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: rgb(97, 65, 71);
+    }
+    .container {
+      border: 2px solid white;
+      margin: 85px 66px;
+      padding: 60px 61px;
+      width: 37%;
+      border-radius: 13px;
+    }
+    .form-group input {
+      font-family: "Baloo Bhai 2", cursive;
+      text-align: center;
+      display: block;
+      width: 445px;
+      padding: 2px;
+      border: 2px solid black;
+      margin: 3px auto;
+      font-size: 22px;
+      border-radius: 9px;
+    }
+    .container h1 {
+      text-align: center;
+    }
+    .container button {
+      display: block;
+      width: 79%;
+      margin: 17px auto;
+    }
+  </style>
+  <body>
+    <header class="header">
+      <!-- left box for logo -->
+      <div class="left">
+        <img src="4.ico" alt="" />
+        <div>VAEWOLF</div>
+      </div>
+
+      <!-- mid box for nav bar -->
+      <div class="mid">
+        <ul class="navbar">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Lovely ships</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- right box for buttons -->
+      <div class="right">
+        <button class="btn">Call Us Now</button>
+        <button class="btn">Email Us</button>
+      </div>
+    </header>
+    <div class="container">
+      <h1>wanna know to whom you are sired to ?</h1>
+      <form action="noaction.php">
+        <div class="form-group">
+          <input type="text" name="" placeholder="Enter your Name" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="" placeholder="Enter your Age" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="" placeholder="Gender" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="" placeholder="Your fav character?" />
+        </div>
+        <button class="btn">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
