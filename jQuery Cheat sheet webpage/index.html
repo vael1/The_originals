@@ -1,0 +1,1487 @@
+<!DOCTYPE html> 
+ <html lang="en"> 
+     <head> 
+         <meta charset="UTF-8"> 
+         <link rel="stylesheet" href="style.css"> 
+         <link rel="stylesheet" href="https://use.typekit.net/vfn1flx.css"> 
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"> 
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+         <title>jQuery Cheat Sheet 📄</title> 
+     </head> 
+     <body> 
+         <header> 
+             <h1 id="header">JS Vanilla & jQuery Cheat Sheet 📄</h1> 
+         </header> 
+         <div class="container"> 
+             <div class="functions"> 
+                 <h2>Functions</h2> 
+                 <ul> 
+                     <li>Create an HTML element</li> 
+                     <li>Remove an HTML element</li> 
+                     <li>Append an HTML element</li> 
+                     <li>Prepend an HTML element</li> 
+                     <li>Create + add an HTML element after another element</li> 
+                     <li>Create + add an HTML element before another element</li> 
+                     <li>Clone an HTML element</li> 
+                     <li>Add a class to an HTML item</li> 
+                     <li>Remove a class to an HTML item</li> 
+                     <li>Toggle the class of an HTML item</li> 
+                     <li>Add a disabled attribute to an HTML button</li> 
+                     <li>Remove the disabled attribute of an HTML button</li> 
+                     <li>Set a data-src attribute to a img element</li> 
+                     <li>Remove the data-src attribute of the img element</li> 
+                     <li>Hide an HTML element on click (display: none)</li> 
+                     <li>Show an HTML element on click (display: block)</li> 
+                     <li>Fade in an HTML element using jQuery</li> 
+                     <li>Fade out an HTML element using jQuery</li> 
+                     <li>Animate an item after 2s from the initial page load</li> 
+                 </ul> 
+             </div> 
+             <div class="selectors"> 
+                 <h2>Selectors</h2> 
+                 <ul> 
+                     <li>Iterate a collection of elements</li> 
+                     <li>Get the parent element of a certain element</li> 
+                     <li>Get the collection of children of a certain element</li> 
+                     <li>Get all the elements that have a certain class</li> 
+                     <li>Get an item by id</li> 
+                     <li>Get all the elements that have a certain class and a certain property</li> 
+                     <li>Get the selected option of a select element</li> 
+                     <li>Change an attribute of a first element</li> 
+                     <li>Show the value of a first input on the page</li> 
+                     <li>Remove all items from a specific selector</li> 
+                 </ul> 
+             </div> 
+             <div class="events"> 
+                 <h2>Events</h2> 
+                 <ul> 
+                     <li>HTML document loaded</li> 
+                     <li>HTML item clicked</li> 
+                     <li>HTML item double clicked</li> 
+                     <li>Key pressed on keyboard </li> 
+                     <li>Mouse cursor moves</li> 
+                     <li>Value changed on text input</li> 
+                     <li>Image loaded</li> 
+                     <li>Image load fail</li> 
+                     <li>Form submitted</li> 
+                     <li>Option selected on select element</li> 
+                     <li>When you position the mouse over an element</li> 
+                     <li>Checkbox checked or unchecked</li> 
+                     <li>Show the clicked item of an UL list</li> 
+                 </ul> 
+             </div> 
+         </div> 
+         <div id="modal" class="modal hidden"> 
+             <div class="modal__container"> 
+                 <h3 id="modal__title"></h3> 
+                 <span id="modal__x">X</span> 
+                 <div class="modal__example"> 
+  
+                     <h4 id="change-vanilla">JS Vanilla</h4> 
+                     <div id="vanilla"> 
+  
+                         <div class="modal__example__code" id="function-1V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code>var btn = document.createElement("BUTTON");</code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-2V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Examples:</p> 
+                                     <code>div.parentNode.removeChild(div);</code> 
+                                     <code>div.removeChild(div.lastChild);</code> 
+                                     <code>div.remove();</code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <div class="red">Hit the button to remove me</div> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-3V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Examples:</p> 
+                                     <code>div.appendChild(div);</code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-4V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code>parentNode.insertBefore(newChild, parentNode.childNodes[0]);</code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-5V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let after = document.createElement("P"); 
+                                         after.innerText = "Added after!";<br> 
+                                         let reference = document.querySelector("h2"); 
+                                         parentNode.insertBefore(after, reference.nextSibling); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p class="red">I was here first!</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-6V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let before = document.createElement("P"); 
+                                         before.innerText = "Added before!";<br> 
+                                         let reference = document.querySelector("h2"); 
+                                         parentNode.insertBefore(before, reference); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p class="red">I was here first!</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-7V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let orgn = document.querySelector("p");<br> 
+                                         let cln = orgn.cloneNode(true); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p class="red">Cloned node?!</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-8V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let addClass = document.querySelector("p"); 
+                                         addClass.classList.add("selected"); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Hit the button to add me a class</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-9V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let removeClass = document.querySelector("p"); 
+                                         removeClass.classList.remove("selected"); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p class="selected">Hit the button to remove my class</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-10V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let toggleClass = document.querySelector("p"); 
+                                         toggleClass.classList.toggle("selected"); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Hit the button to toggle my class</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-11V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.getElementById("Button").disabled = true; 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button><button>HTML Button</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-12V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.getElementById("Button").disabled = false; 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button><button disabled>HTML Button</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-13V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let image = document.querySelector("img"); 
+                                         image.setAttribute("data-src", "foobar"); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <img src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg"> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-14V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let image = document.querySelector("img"); 
+                                         image.removeAttribute("data-src"); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <img data-src="foobar" src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg"> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-15V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let button = document.querySelector("button"); 
+                                         button.style.display = "none"; 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-16V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let image = document.querySelector("img"); 
+                                         image.style.display = "block"; 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <img src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg" style="display:none"> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="function-19V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.addEventListener("DOMContentLoaded", () => {<br> 
+                                             setTimeout(() => {<br> 
+                                                 document.getElementById("header").animate([<br> 
+                                                     { transform: 'translateX(0px)' },<br> 
+                                                     { transform: 'translateX(30px)' },<br> 
+                                                     { transform: 'translateX(0px)' }<br> 
+                                                 ], {<br> 
+                                                     duration: 500,<br> 
+                                                     iterations: 1<br> 
+                                                 });<br> 
+                                             }, 2000)<br> 
+                                         });<br> 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-1V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code>let parag = document.querySelectorAll("p"); <br> 
+                                         for (let i = 0; i&#60;parag.length; i++) { 
+                                             parag[i].innerText = parag[i].innerText+" iterated!"; 
+                                             parag[i].classList.add("red"); 
+                                         } 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Paragraph 1</p> 
+                                     <p>Paragraph 2</p> 
+                                     <p>Paragraph 3</p> 
+                                     <p>Paragraph 4</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-2V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code>document.querySelector("button").parentNode;</code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Hit the button to change his father font-weight property.</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-3V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code>document.querySelector("div").childNodes;</code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Child 1</p> 
+                                     <p>Child 2</p> 
+                                     <p>Child 3</p> 
+                                     <p>Child 4</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-4V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code>let change = document.getElementsByClassName("selector4v");<br> 
+                                         for (let i = 0; i&#60;change.length; i++) {<br> 
+                                             change[i].style.fontWeight = "bold";<br> 
+                                         } 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p class="selector4v">Child 1</p> 
+                                     <p class="selector4v">Child 2</p> 
+                                     <p class="selector4v">Child 3</p> 
+                                     <p class="selector4v">Child 4</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-5V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.getElementById("selector5V").style.<br>fontWeight = "bold"; 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p id="selector5V">Element with ID</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-6V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.querySelectorAll(".selector6V").forEach<br>(element => {<br> 
+                                             if (element.style.display == "none") { 
+                                                 element.style.display = "block"; 
+                                                 element.style.color = "crimson";<br> 
+                                             }<br> 
+                                         }) 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p class="selector6V" style="display:none;">Child 1</p> 
+                                     <p class="selector6V">Child 2</p> 
+                                     <p>Child 3</p> 
+                                     <p class="selector6V" style="display:none;">Child 4</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-7V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.querySelector("select").value; 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <select> 
+                                         <option></option> 
+                                         <option>jQuery</option> 
+                                         <option>JS Vanilla</option> 
+                                         <option>Both!</option> 
+                                     </select> 
+                                     <p>Change the option and hit the button to show it here: </p> 
+                                     <span></span> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-8V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let links = document.getElementsByTagName("a"); 
+                                         links[0].href = "http://blank.html" 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Hit the button to change the first link href</p> 
+                                     <br> 
+                                     <a href="http://www.w3schools.com">W3Schools</a><br> 
+                                     <a href="http://www.stackoverflow.com">StackOverflow</a><br> 
+                                     <a href="http://www.jquery.com">jQuery.com</a><br> 
+                                     <a href="http://www.google.com">Google</a><br> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-9V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let inputMsg = <br>document.querySelectorAll("input")[0].value 
+                                         alert(inputMsg); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Write something on the input</p> 
+                                     <input type="text" placeholder="Anything"> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="selector-10V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Examples:</p> 
+                                     <code> 
+                                         let removing = document.querySelectorAll("ol li");<br> 
+                                         for (let i  = 0; i < removing.length; i++) { 
+                                             removing[i].remove();<br> 
+                                         } 
+                                     </code> 
+                                     <code> 
+                                         document.querySelector("ol").innetHTML = ""; 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Hit the button to remove all items:</p> 
+                                     <ol> 
+                                         <li>Item 1</li> 
+                                         <li>Item 2</li> 
+                                         <li>Item 3</li> 
+                                         <li>Item 4</li> 
+                                     </ol> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-1V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         var htmlLoaded = false;<br> 
+                                         document.addEventListener("DOMContentLoaded", () => {<br> 
+                                             htmlLoaded = true;<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p>Was the HTML document loaded?</p> 
+                                     <span class="red"></span> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-2V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         var button = document.querySelector("button"); 
+                                         button.addEventListener("click",()=>{ 
+                                             button.innerText = button.innerText+" Clicked!" 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it!</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-3V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         var button = document.querySelector("button"); 
+                                         button.addEventListener("dblclick",()=>{ 
+                                             button.innerText = button.innerText+" Double clicked!" 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it!</button> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-4V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.addEventListener("keydown", function(){<br> 
+                                         document.querySelector("span").innerText = event.key;<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button><span></span> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-5V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let span = document.querySelector("span");<br> 
+                                         document.addEventListener("mousemove", () => {<br> 
+                                         span.innerText = "Mouse moving: "+ event.pageX + ", " + event.pageY;<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button><span></span> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-6V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         let input = document.querySelector("input");<br> 
+                                         input.addEventListener("input", ()=> {<br> 
+                                         document.querySelector("p").innerText = event.target.value; 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <input type="text"> 
+                                     <p></p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-7V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         var imgVanilla = false; <br> 
+                                         document.querySelector("img").<br>addEventListener("load", function() { <br> 
+                                         imgVanilla = true; <br> 
+                                         }); <br> 
+                                         document.querySelector("#event-7V img").<br>setAttribute("src", "src/myImg.jpg"); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p></p> 
+                                     <img> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-8V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         var imgErrorVanilla = false; <br> 
+                                         document.querySelector("img").<br>addEventListener("error", function() { 
+                                             imgErrorVanilla = true;<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <button>Try it</button> 
+                                     <p></p> 
+                                     <img src=""> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-9V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.querySelector("#form").<br>addEventListener("submit", () => {<br> 
+                                             event.preventDefault(); 
+                                             event.target.nextSibling.innerText = "FORM SUBMITTED!";<br> 
+                                             event.target.remove();<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <form> 
+                                         <input type="text"> 
+                                         <input type="submit"> 
+                                     </form><span></span> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-10V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.querySelector("select").<br>addEventListener("change", () => {<br> 
+                                             document.querySelector("p").<br>innerText = "Changed to: " + event.target.value;<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <select> 
+                                         <option>Option 1</option> 
+                                         <option>Option 2</option> 
+                                         <option>Option 3</option> 
+                                     </select> 
+                                     <p>Option not changed</p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-11V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.querySelector("#event-11V span").<br>addEventListener("mouseover", () => {<br> 
+                                             event.target.innerText = "Mouse is over!"<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <span>Mouse is out!</span> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-12V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.querySelector("input").<br>addEventListener("change", () => {<br> 
+                                             if (event.target.checked){<br> 
+                                                 event.target.nextSibling.innerText = "Checked"<br> 
+                                             } else {<br> 
+                                                 event.target.nextSibling.innerText = "Unchecked"<br> 
+                                             }<br> 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <input type="checkbox"><span>Unchecked</span> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                         <div class="modal__example__code" id="event-13V"> 
+                             <div class="flex"> 
+                                 <div> 
+                                     <p>Example:</p> 
+                                     <code> 
+                                         document.querySelector("ul").<br>addEventListener("click", () => {<br> 
+                                             document.querySelector("p").innerText = <br>"Item clicked: " + event.target.innerText; 
+                                         }); 
+                                     </code> 
+                                 </div> 
+                                 <div class="modal__example__try"> 
+                                     <p>Ingredidents List:</p> 
+                                     <ol> 
+                                         <li>Coffee</li> 
+                                         <li>Milk</li> 
+                                         <li>Sugar</li> 
+                                     </ol><p class="red"></p> 
+                                 </div> 
+                             </div> 
+                         </div> 
+  
+                     <div> 
+                         <h4 id="change-jquery">jQuery</h4> 
+                         <div id="jquery"> 
+  
+                             <div class="modal__example__code" id="function-1Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>var btn = $("&#60;button&#62; BUTTON &#60;/button&#62;");</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-2Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$( "div" ).remove();</code> 
+                                         <code>$( "div" ).remove( ":contains('Hit')" );</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <div class="red">Hit the button to remove me</div> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-3Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("div").append("&#60;p&#62;Hello World appended!&#60;/p&#62;");</code> 
+                                         <code>$("div").append(variable);</code> 
+                                         <code>$("div").append($("#other-element"));</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-4Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("div").prepend("&#60;p&#62;Hello World prepended!&#60;/p&#62;");</code> 
+                                         <code>$("div").prepend($("#other-element"));</code> 
+                                         <code>$("div").prepend(variable);</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-5Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>let afterElement = $("&#60;p&#62;Added after!&#60;/p&#62;"); 
+                                             $("element").after(afterElement); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p class="red">I was here first!</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-6Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>let beforeElement = $("&#60;p&#62;Added before!&#60;/p&#62;"); 
+                                             $("element").before(beforeElement); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p class="red">I was here first!</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-7Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("p").clone().appendTo("#div1");</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p class="red">Cloned node?!</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-8Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("p").addClass("selected");</code> 
+                                         <code>$("p").addClass("highlight special");</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Hit the button to add me a class</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-9Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("p").removeClass("selected");</code> 
+                                         <code>$("p").removeClass("highlight special");</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p class="selected">Hit the button to remove my class</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-10Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("p").toggleClass("selected");</code> 
+                                         <code>$("p").toggleClass("highlight special");</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Hit the button to toggle my class</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-11Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("button").prop("disabled", true);</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button><button>HTML Button</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-12Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("button").prop("disabled", false);</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button><button disabled>HTML Button</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-13Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("img").attr("data-src","foobar")</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <img src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg"> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-14Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("img").removeAttr("data-src","foobar"); 
+                                             $("img").removeData("src","foobar"); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <img data-src="foobar" src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg"> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-15Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("button").click(() => {$(event.target).toggle();}</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-16Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("button").click(() => {$(event.target).toggle();}</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <img src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg" style="display:none"> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-17Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("button").click(() => {$("img").fadeIn();}</code> 
+                                         <code>$("button").click(() => {$("img").fadeIn("slow");}</code> 
+                                         <code>$("button").click(() => {$("img").fadeIn("fast");}</code> 
+                                         <code>$("button").click(() => {$("img").fadeIn(3000);}</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <img src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg" style="display:none;"> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-18Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("button").click(() => {$("img").fadeOut();}</code> 
+                                         <code>$("button").click(() => {$("img").fadeOut("slow");}</code> 
+                                         <code>$("button").click(() => {$("img").fadeOut("fast");}</code> 
+                                         <code>$("button").click(() => {$("img").fadeOut(2000);}</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <img src="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/horizon_3_back.jpg"> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="function-19Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $(document).ready(function(){ 
+                                                 $(".container").css("opacity", 0);<br> 
+                                                 setTimeout( () => {<br> 
+                                                     $(".container").animate({opacity:1, color: "red"}, 1000); 
+                                                 },2000);<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-1Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Examples:</p> 
+                                         <code>$("p").each(function(index, element) { 
+                                             $(element).text( $(element).text() + " iterated!") 
+                                             .addClass("red"); 
+                                         }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Paragraph 1</p> 
+                                         <p>Paragraph 2</p> 
+                                         <p>Paragraph 3</p> 
+                                         <p>Paragraph 4</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-2Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("button").parent().css("font-weight", "bold");</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Hit the button to change his father font-weight property.</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-3Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code>$("button").parent().children()<br> 
+                                             .css("font-weight", "bold");</code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Child 1</p> 
+                                         <p>Child 2</p> 
+                                         <p>Child 3</p> 
+                                         <p>Child 4</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-4Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $(".selector4Q").css("font-weight","bold"); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p class="selector4Q">Child 1</p> 
+                                         <p class="selector4Q">Child 2</p> 
+                                         <p class="selector4Q">Child 3</p> 
+                                         <p class="selector4Q">Child 4</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-5Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("#selector5Q").css("font-weight","bold"); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p id="selector5Q">Element with ID</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-6Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $(".selector6Q:hidden").css({"display":"block", "color":"crimson"}); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p class="selector6Q" style="display:none;">Child 1</p> 
+                                         <p class="selector6Q">Child 2</p> 
+                                         <p>Child 3</p> 
+                                         <p class="selector6Q" style="display:none;">Child 4</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-7Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("select").val(); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <select> 
+                                             <option></option> 
+                                             <option>jQuery</option> 
+                                             <option>JS Vanilla</option> 
+                                             <option>Both!</option> 
+                                         </select> 
+                                         <p>Change the option and hit the button to show it here: </p> 
+                                         <span></span> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-8Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("a:first").attr("href", "http://blank.html"); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Hit the button to change the first link href</p> 
+                                         <br> 
+                                         <a href="http://www.w3schools.com">W3Schools</a><br> 
+                                         <a href="http://www.stackoverflow.com">StackOverflow</a><br> 
+                                         <a href="http://www.jquery.com">jQuery.com</a><br> 
+                                         <a href="http://www.google.com">Google</a><br> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-9Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             alert($("input:first").val()); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Write something on the input</p> 
+                                         <input type="text" placeholder="Anything"> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="selector-10Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("ol").empty(); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Hit the button to remove all items:</p> 
+                                         <ol> 
+                                             <li>Item 1</li> 
+                                             <li>Item 2</li> 
+                                             <li>Item 3</li> 
+                                             <li>Item 4</li> 
+                                         </ol> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-1Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             var wasLoaded = false;<br> 
+                                             $(document).ready(function(){<br> 
+                                                 wasLoaded = true;<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p>Was the HTML document loaded?</p> 
+                                         <span class="red"></span> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-2Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("button").click(()=>{<br> 
+                                                 let button = $("button").text();<br> 
+                                                 $("button").text(button+" Clicked!");<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it!</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-3Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("button").dblclick(()=>{<br> 
+                                                 let button = $("button").text();<br> 
+                                                 $("button").text(button+" Double clicked!");<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it!</button> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-4Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $(document).keydown(()=>{<br> 
+                                                 $("span").text(event.key);<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button><span></span> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-5Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $(document).mousemove(function mouseQuery() { 
+                                             $("#event-5Q span").text("Mouse moving: "+ event.pageX + ", " + event.pageY); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button><span></span> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-6Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("input").on("input", () => {<br> 
+                                             $("p").text($(event.target).val());<br> 
+                                             }) 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <input type="text"> 
+                                         <p></p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-7Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             var imgLoaded = false;<br> 
+                                             $("img").one("load",function(){<br> 
+                                                 imgLoaded = true;<br> 
+                                             }).attr("src", "src/myImg.jpg"); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p></p> 
+                                         <img> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-8Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             var imgErrorQuery = false; <br> 
+                                             $("img").on("error", function(){<br> 
+                                                 imgErrorQuery = true;<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <button>Try it</button> 
+                                         <p></p> 
+                                         <img src="imageNotFound.jpg"> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-9Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("#form").on("submit", () => { <br> 
+                                                 event.preventDefault(); <br> 
+                                                 $("span").text("FORM SUBMITTED!") <br> 
+                                                 $(event.target).remove(); <br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <form id="submitQuery"> 
+                                             <input type="text"> 
+                                             <input type="submit"> 
+                                         </form><span></span> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-10Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("select").change( () => { <br> 
+                                                 $("p").text("Changed to: "+$("select").val());<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <select> 
+                                             <option>Option 1</option> 
+                                             <option>Option 2</option> 
+                                             <option>Option 3</option> 
+                                         </select> 
+                                         <p>Option not changed</p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-11Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("span").mouseover(()=>{<br> 
+                                                 $(event.target).text("Mouse is over!");<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <span>Mouse is out!</span> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-12Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("input").change(()=>{<br> 
+                                                 if ($(event.target).is(":checked")) {<br> 
+                                                     $(event.target).next().text("Checked");<br> 
+                                                 } else {<br> 
+                                                     $(event.target).next().text("Unchecked");<br> 
+                                                 }<br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <input type="checkbox"><span>Unchecked</span> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                             <div class="modal__example__code" id="event-13Q"> 
+                                 <div class="flex"> 
+                                     <div> 
+                                         <p>Example:</p> 
+                                         <code> 
+                                             $("ul").click(()=>{ <br> 
+                                                 $("p").text("Item clicked: " + $(event.target).text()); <br> 
+                                             }); 
+                                         </code> 
+                                     </div> 
+                                     <div class="modal__example__try"> 
+                                         <p>Ingredidents List:</p> 
+                                         <ol> 
+                                             <li>Coffee</li> 
+                                             <li>Milk</li> 
+                                             <li>Sugar</li> 
+                                         </ol><p class="red"></p> 
+                                     </div> 
+                                 </div> 
+                             </div> 
+  
+                         </div> 
+                     </div> 
+                 </div> 
+             </div> 
+         </div> 
+     </body> 
+     <script src="vanilla.js"></script> 
+     <script src="jquery.js"></script> 
+     </html>
